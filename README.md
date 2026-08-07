@@ -1,2 +1,2 @@
 # GitHub Pages 
-Ini Adalah Link Demo Saya: https://adrianoribetosaffar.github.io/adrianoaffar.github.io/
+This is My Profile Web: https://adrianoaffar.github.io/
