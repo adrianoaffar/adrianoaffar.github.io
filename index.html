@@ -1,393 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adriano Ribetos Affar — Web Development &amp; Multimedia Production</title>
+<meta name="description" content="Portfolio of Adriano Ribetos Affar — Information Systems graduate, front-end developer, live video mixer and multimedia producer based in Jayapura, Papua, Indonesia.">
 
-  <title>Adriano Affar</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<link rel="icon" href="assets/img/logo-adriano.png">
 
-  <!-- Favicons -->
-  <link href="assets/img/logo-adriano.png" rel="icon">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+<!-- Set theme before paint to avoid flash -->
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
 </head>
-
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
+<!-- ======= Header / Control strip ======= -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#hero" class="brand">
+      <img src="assets/img/logo-adriano.png" alt="Adriano Affar logo">
+      Adriano Affar
+    </a>
 
-    <nav id="navbar" class="navbar nav-menu">
+    <nav class="nav-menu" id="navMenu">
       <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#experience" class="nav-link scrollto"><i class="fa-solid fa-users-gear"></i><span>Experience</span></a></li>
-        <li><a href="#skills" class="nav-link scrollto"><i class="fa-solid fa-chart-simple"></i><span>Skills</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        <li><a href="#hero" class="nav-link active"><span class="ch"></span> Home</a></li>
+        <li><a href="#about" class="nav-link"><span class="ch"></span> About</a></li>
+        <li><a href="#experience" class="nav-link"><span class="ch"></span> Experience</a></li>
+        <li><a href="#skills" class="nav-link"><span class="ch"></span> Skills</a></li>
+        <li><a href="#education" class="nav-link"><span class="ch"></span> Education</a></li>
+        <li><a href="#contact" class="nav-link"><span class="ch"></span> Contact</a></li>
       </ul>
-    </nav><!-- .nav-menu -->
+    </nav>
 
-  </header><!-- End Header -->
+    <div class="header-actions">
+      <a href="https://wa.me/6282199481169?text=Hi%20Adriano%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
+         class="btn-wa" target="_blank" rel="noopener">
+        <i class="bx bxl-whatsapp"></i><span>WhatsApp Me</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="bx bx-moon" id="themeIcon"></i>
+      </button>
+      <button class="mobile-nav-toggle" id="navToggle" aria-label="Open menu">
+        <i class="bx bx-menu"></i>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Hi, I'm Adriano Affar</h1>
-      <p>a <span class="typed" data-typed-items="Designer Canva, Junior Front-end Developer, Videographer, Photographer"></span></p>
-      <div class="social-links">
+<!-- ======= Hero ======= -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow"><span class="tally-dot"></span> Jayapura, Papua, Indonesia</div>
+      <h1>Adriano<br>Ribetos <span>Affar</span></h1>
+      <div class="role-strip" id="roleStrip">Web Developer</div>
+      <p class="hero-lede">Information Systems graduate with 4+ years behind the camera and the switcher — mixing live broadcasts, building front-end interfaces, and directing video for campus, church and national-level events.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary"><i class="bx bx-envelope"></i> Get in Touch</a>
+        <a href="#experience" class="btn btn-ghost"><i class="bx bx-play-circle"></i> View Work</a>
       </div>
     </div>
-  </section><!-- End Hero -->
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" >
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>As a student, my passion for technology is burning, <br>
-            and my determination is strong to become a programmer.
-        </div>
-        <div class="row team-item">        
-          <div class="col-lg-4 overflow-hidden" data-aos="fade-up">
-            <img src="assets/img/foto-ano.jpg" class="img-fluid" width="300px" height="300px" >
-        </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>My Biodata</h3>
-            <p class="fst-italic">
-              Short bio about myself:
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Status:</strong> <span>Student</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Papua, Indonesia</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              With a passion that knows no bounds, I aspire to understand the complexity of codes and create innovative solutions through the world of programming. 
-              I welcome every challenge in this field with enthusiasm, ready to learn 
-              and grow in order to reach the peak of potential as a professional in the world of technology.
-             </p>
-          </div>
-        </div>
-
-      </div>
-    </section><br><!-- End About Section -->
-
-<!-- ======= Experience Section ======= -->
-<section id="experience" class="experience">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Experience</h2>
+    <div class="hero-frame">
+      <img src="assets/img/foto-profil.png" alt="Adriano Affar operating a camera gimbal">
+      <div class="scan"></div>
     </div>
-    
-    <div class="container">
-      <main class="grid">
-        <article>
-          <img src="assets/img/pmm-elektro-ub.jpg" alt="Pertukaran Mahasiswa Merdeka">
-          <div class="konten">
-            <h2><b>Pertukaran Mahasiswa Merdeka Batch 4</b></h2>
-            <p>Mengikuti pembelajaran selama 1 semester di Universitas Brawijaya.</p>
-          </div>
-        </article>
-        <article>
-          <a href="https://youtu.be/fZkkd9tAxqU?si=55cpKBVXVnTbFo5W">
-            <img src="assets/img/poster-film-pendek.png" alt="Film Pendek Bertukar">
-          </a>
-          <div class="konten">
-            <h2><b>Film Pendek "Bertukar"</b></h2>
-            <p>Sebagai Videographer utama dalam pembuatan film.</p>
-          </div>
-        </article>
-        <article>
-          <img src="assets/img/debat-bahasa-inggris.jpg" alt="Juara Debat Bahasa Inggris">
-          <div class="konten">
-            <h2><b>Juara II Debat Bahasa Inggris SMK Se - Provinsi Papua Tahun 2021</b></h2>
-            <p>Sebagai Pembicara Kedua.</p>
-          </div>
-        </article>
-        <article>
-          <a href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
-            <img src="assets/img/persami-2023.png" alt="After Movie Persami FMIPA 2023" srcset="">
-          </a> 
-          <div class="konten">
-            <h2><b>After Movie Persami FMIPA 2023</b></h2>
-            <p>Sebagai Director Videographer utama dan editor dalam pembuatan after movie.</p>
-          </div>         
-        </article>
-        <article>
-          <a href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
-            <img src="assets/img/pkkmaba-2023.png" alt="After Movie PKKMaBa FMIPA 2023" srcset="">
-          </a> 
-          <div class="konten">
-            <h2><b>After Movie PKKMaBa FMIPA 2023</b></h2>
-            <p>Sebagai Director, Videographer utama dan editor dalam pembuatan after movie.</p>
-          </div>         
-        </article>
-        <article>
-          <a href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
-            <img src="assets/img/pkkmaba-2024.png" alt="After Movie PKKMaBa FMIPA 2024" srcset="">
-          </a> 
-          <div class="konten">
-            <h2><b>After Movie PKKMaBa FMIPA 2024</b></h2>
-            <p>Sebagai Director, Videographer utama dan editor dalam pembuatan after movie.</p>
-          </div>         
-        </article>
-        <article>
-          <a href="https://github.com/AdrianoRibetosAffar/Deteksi-Sampah-dan-Tempat-Sampah-Otomatis">
-            <img src="assets/img/Screenshot (88).png" alt="Tempat Sampah Otomatis">
-          </a>          
-          <div class="konten">
-            <h2><b>Deteksi Sampah dan Tempat Sampah Otomatis</b></h2>
-            <p>Proyek ini merupakan tugas akhir dari mata kuliah Pengolahan Citra Digital</p>
-          </div>
-        </article>
-        <article>
-          <a href="https://github.com/AdrianoRibetosAffar/multimedia-pniel-kotaraja">
-            <img src="assets/img/web-mulmed.png" alt="Website Multimedia GKI Pniel Kotaraja">
-          </a>
-          <div class="konten">
-            <h2><b>Website Multimedia GKI Pniel Kotaraja</b></h2>
-            <p>Sebagai Web Developer dalam pembuatan website ini.</p>
-          </div>
-        </article>
-        <article>
-          <a href="https://github.com/AdrianoRibetosAffar/SI-Rating-SMA">
-            <img src="assets/img/rating-sma.png" alt="Webstie rating SMA di Jayapura">
-          </a>
-          <div class="konten">
-            <h2><b>Website Rating SMA di Jayapura</b></h2>
-          <p>Sebagai Web Developer dalam pembuatan website ini pada Tugas Akhir Mata Kuliah Manajemen Proyek</p>
-          </div>          
-        </article>
-      </main>
-    </div>
-
   </div>
 </section>
 
-<!-- Experience Section -->
-<!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills">
-      <div class="container" data-aos="fade-up">
+<main id="main">
 
-        <div class="section-title">
-          <h2>My Skills</h2>
-        </div>
-        
-        <!-- Category Headers -->
-        <div class="container">
-          <div class="row mb-4">
-            <div class="col-lg-6">
-              <h4 class=""><b>Web Development Skills</b></h4>
-            </div>
-            <div class="col-lg-6">
-              <h4 class="text-end"><b>Design Skills</b></h4>
-            </div>
-          </div>
-        </div>
-        
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >HTML & CSS</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 90%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Figma</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 80%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Java Script</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 40%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Whimsical</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 90%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">70%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >PHP</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 60%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">50%</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Canva</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 90%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">85%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Laravel</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 40%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label >Google Slides</label>
-                <div class="progress">
-                  <div class="progres-bar bg-success" style="width: 90%; background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #17a2b8 100%)" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-
-      </div>
-    </section> 
-    <!-- Skills Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <main>
-        
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-        <div class="row mt-1">
-
-          <div class="col-4 col-md-4 col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Jln. Jeruk Nipis, Furia BPD blok A, Kotaraja, Jayapura-Papua</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-4 col-md-4 col-lg-4">
-            <div class="info">
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>adriano.affar28@gmail.com</p>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col-4 col-md-4 col-lg-4">
-            <div class="info">
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+62 821 9948 1169</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        
-
-      </div>
-      </main>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <!-- ======= About ======= -->
+  <section id="about">
     <div class="container">
-      <h3>Adriano Affar</h3>
-      <p>For more information, please contact me via the contact below.</p>
-      <div class="social-links">
-        <a href="https://instagram.com/adriano_affar" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100013540367135" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://wa.me/682199481169" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+      <div class="section-head">
+        <h2>About</h2>
+        <div class="cue">PROFILE</div>
       </div>
-      <div class="copyright">
-        &copy; 2023. All Rights Reserved
+
+      <div class="about-grid">
+        <div class="about-photo" data-reveal>
+          <img src="assets/img/foto-ano.jpg" alt="Portrait of Adriano Ribetos Affar">
+        </div>
+
+        <div data-reveal>
+          <p class="about-lede">Information Systems graduate from Universitas Cenderawasih with a strong interest in web development, IoT and video production — and a track record of leading cross-functional teams through documentation, publication and live-broadcast projects.</p>
+
+          <div class="stat-row">
+            <div class="stat"><b>3.57</b><span>GPA / 4.00</span></div>
+            <div class="stat"><b>4+</b><span>Years in Multimedia</span></div>
+            <div class="stat"><b>10+</b><span>Led Projects</span></div>
+          </div>
+
+          <ul class="fact-list">
+            <li><b>Status</b>Information Systems Graduate</li>
+            <li><b>Based in</b>Jayapura, Papua, Indonesia</li>
+            <li><b>Focus</b>Web Dev &middot; Multimedia &middot; Live Broadcast</li>
+            <li><b>Availability</b>Open to Freelance &amp; Full-time</li>
+          </ul>
+
+          <p style="color:var(--ink-soft); font-size:.95rem;">With a passion that knows no bounds, I aspire to understand the complexity of code and create innovative solutions through programming — while staying rooted in the craft of visual storytelling that got me here.</p>
+        </div>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- ======= Experience ======= -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <div class="cue">SELECTED WORK</div>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+      <div class="exp-grid">
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://www.instagram.com/">
+          <div class="exp-thumb">
+            <span class="ch-label">PMM 4</span>
+            <img src="assets/img/pmm-elektro-ub.jpg" alt="Pertukaran Mahasiswa Merdeka Batch 4">
+          </div>
+          <div class="exp-body">
+            <h3>Student Exchange — Pertukaran Mahasiswa Merdeka 4</h3>
+            <p>One semester of study and cultural exchange at Universitas Brawijaya, taking on multiple production and coordination roles.</p>
+          </div>
+        </a>
 
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/fZkkd9tAxqU?si=55cpKBVXVnTbFo5W">
+          <div class="exp-thumb">
+            <span class="ch-label">FILM</span>
+            <img src="assets/img/poster-film-pendek.png" alt="Short film Bertukar poster">
+            <div class="play"><i class="bx bx-play-circle"></i></div>
+          </div>
+          <div class="exp-body">
+            <h3>Short Film "Bertukar" — Lead Videographer</h3>
+            <p>Captured scene footage on set for PMM 4 Universitas Brawijaya, working directly under the producer and director.</p>
+          </div>
+        </a>
+
+        <div class="exp-card" data-reveal>
+          <div class="exp-thumb">
+            <span class="ch-label">DEBATE</span>
+            <img src="assets/img/debat-bahasa-inggris.jpg" alt="English debate competition, 2nd place">
+          </div>
+          <div class="exp-body">
+            <h3>2nd Place — Papua Provincial English Debate</h3>
+            <p>Competed as second speaker in the provincial SMK-level English debate competition, 2021.</p>
+          </div>
+        </div>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
+          <div class="exp-thumb">
+            <span class="ch-label">AFTERMOVIE</span>
+            <img src="assets/img/persami-2023.png" alt="Persami FMIPA 2023 aftermovie">
+            <div class="play"><i class="bx bx-play-circle"></i></div>
+          </div>
+          <div class="exp-body">
+            <h3>Persami FMIPA 2023 — Director &amp; Editor</h3>
+            <p>Directed, shot and edited the official aftermovie documenting the faculty camp event.</p>
+          </div>
+        </a>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
+          <div class="exp-thumb">
+            <span class="ch-label">AFTERMOVIE</span>
+            <img src="assets/img/pkkmaba-2023.png" alt="PKKMaBa FMIPA 2023 aftermovie">
+            <div class="play"><i class="bx bx-play-circle"></i></div>
+          </div>
+          <div class="exp-body">
+            <h3>PKKMaBa FMIPA 2023 — Director, Videographer &amp; Editor</h3>
+            <p>Led capture and post-production of the faculty's official freshman orientation aftermovie.</p>
+          </div>
+        </a>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
+          <div class="exp-thumb">
+            <span class="ch-label">AFTERMOVIE</span>
+            <img src="assets/img/pkkmaba-2024.png" alt="PKKMaBa FMIPA 2024 aftermovie">
+            <div class="play"><i class="bx bx-play-circle"></i></div>
+          </div>
+          <div class="exp-body">
+            <h3>PKKMaBa FMIPA 2024 — Publication &amp; Documentation Coordinator</h3>
+            <p>Led video capture and editing of the official aftermovie as the faculty's primary event record.</p>
+          </div>
+        </a>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://github.com/AdrianoRibetosAffar/Deteksi-Sampah-dan-Tempat-Sampah-Otomatis">
+          <div class="exp-thumb">
+            <span class="ch-label">IOT</span>
+            <img src="assets/img/Screenshot__88_.png" alt="Automatic waste detection system">
+          </div>
+          <div class="exp-body">
+            <h3>Automatic Waste Detection System</h3>
+            <p>Final project for Digital Image Processing — real-time waste-type detection controlling an automated bin.</p>
+          </div>
+        </a>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://github.com/AdrianoRibetosAffar/multimedia-pniel-kotaraja">
+          <div class="exp-thumb">
+            <span class="ch-label">WEB</span>
+            <img src="assets/img/web-mulmed.png" alt="Multimedia GKI Pniel Kotaraja website">
+          </div>
+          <div class="exp-body">
+            <h3>Multimedia GKI Pniel Kotaraja — Web Developer</h3>
+            <p>Built the official website for the congregation's multimedia ministry, including live-streaming integration.</p>
+          </div>
+        </a>
+
+        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://github.com/AdrianoRibetosAffar/SI-Rating-SMA">
+          <div class="exp-thumb">
+            <span class="ch-label">WEB</span>
+            <img src="assets/img/rating-sma.png" alt="School rating website for Jayapura">
+          </div>
+          <div class="exp-body">
+            <h3>School Rating Platform — Jayapura</h3>
+            <p>Web developer for a ranking and review platform for high schools, built for a Project Management final assignment.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Skills ======= -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <div class="cue">LEVEL CHECK</div>
+      </div>
+
+      <div class="skills-wrap">
+        <div class="skill-group" data-reveal>
+          <h4>Web Development</h4>
+
+          <div class="meter">
+            <div class="meter-top"><span>HTML &amp; CSS</span><span>90%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="90"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>JavaScript</span><span>50%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="50"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>PHP</span><span>60%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="60"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>Laravel</span><span>40%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="40"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <h4>Production &amp; Design</h4>
+
+          <div class="meter">
+            <div class="meter-top"><span>VMix / OBS Studio</span><span>95%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="95"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>Adobe Premiere / CapCut</span><span>90%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="90"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>Figma / Canva</span><span>85%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="85"></div></div>
+          </div>
+          <div class="meter">
+            <div class="meter-top"><span>Whimsical</span><span>70%</span></div>
+            <div class="meter-track"><div class="meter-fill" data-level="70"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Education ======= -->
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <h2>Education</h2>
+        <div class="cue">RECORD</div>
+      </div>
+
+      <div class="edu-list">
+        <div class="edu-item" data-reveal>
+          <div class="edu-year">2022 &ndash; 2026</div>
+          <div>
+            <h3>Bachelor of Information Systems</h3>
+            <p class="school">Universitas Cenderawasih, Jayapura, Indonesia</p>
+            <ul>
+              <li>GPA: 3.57 / 4.00</li>
+              <li>Relevant coursework: Internet Programming, Web Services, Databases, Object-Oriented Programming, Multimedia</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="edu-item" data-reveal>
+          <div class="edu-year">2019 &ndash; 2022</div>
+          <div>
+            <h3>SMK Negeri 3 Teknologi dan Rekayasa</h3>
+            <p class="school">Vocational High School</p>
+            <ul>
+              <li>Completed an internship at PT. Telkom Abepura</li>
+              <li>Won 2nd Place in the Papua Provincial English Debate Competition</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contact ======= -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <div class="cue">GET IN TOUCH</div>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" data-reveal href="https://www.google.com/maps/search/?api=1&query=Jln.+Jeruk+Nipis,+Furia+BPD+blok+A,+Kotaraja,+Jayapura-Papua" target="_blank" rel="noopener">
+          <i class="bx bx-map"></i>
+          <h4>Location</h4>
+          <p>Jln. Jeruk Nipis, Furia BPD Blok A, Kotaraja, Jayapura, Papua</p>
+        </a>
+        <a class="contact-card" data-reveal href="mailto:adriano.affar28@gmail.com">
+          <i class="bx bx-envelope"></i>
+          <h4>Email</h4>
+          <p>adriano.affar28@gmail.com</p>
+        </a>
+        <a class="contact-card" data-reveal href="https://wa.me/6282199481169" target="_blank" rel="noopener">
+          <i class="bx bxl-whatsapp"></i>
+          <h4>WhatsApp / Call</h4>
+          <p>+62 821 9948 1169</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <div class="foot-brand">Adriano Affar</div>
+    <p>For more information, please reach out through any of the channels above.</p>
+    <div class="foot-links">
+      <a href="https://instagram.com/adriano_affar" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/adriano-affar-8471822a7/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/adrianoaffar" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+    </div>
+    <div class="foot-note">&copy; 2023 Adriano Ribetos Affar. All rights reserved.</div>
+  </div>
+</footer>
+
+<a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
