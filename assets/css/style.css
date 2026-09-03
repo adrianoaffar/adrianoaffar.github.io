@@ -371,6 +371,60 @@ section{ padding: 90px 0; }
 }
 
 /* ==========================================================================
+   What I Do
+   ========================================================================== */
+.what-ido-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.what-ido-card{
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow:hidden;
+  background: var(--bg-elevated);
+  transition: transform .25s ease, box-shadow .25s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.what-ido-card:hover{ transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,.12); }
+.what-ido-thumb{ position:relative; aspect-ratio: 4/3; overflow:hidden; }
+.what-ido-thumb img{ width:100%; height:100%; object-fit:cover; transition: transform .5s; }
+.what-ido-card:hover .what-ido-thumb img{ transform: scale(1.06); }
+.what-ido-thumb .ch-label{
+  position:absolute; top:10px; left:10px;
+  background: rgba(0,0,0,.65);
+  color:#fff;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: .08em;
+}
+.what-ido-thumb .play{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(0,0,0,0);
+  transition:.25s;
+}
+.what-ido-thumb .play i{
+  opacity:0; transform: scale(.8);
+  transition:.25s;
+  color:#fff; font-size:2.2rem;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
+}
+.what-ido-card:hover .play{ background: rgba(0,0,0,.25); }
+.what-ido-card:hover .play i{ opacity:1; transform:scale(1); }
+.what-ido-body{ padding: 18px 18px 20px; flex:1; display:flex; flex-direction:column; }
+.what-ido-body h3{ font-family: var(--font-body); font-weight:700; font-size: 1.02rem; margin-bottom:8px; letter-spacing:0; }
+.what-ido-body p{ font-size: .88rem; color: var(--ink-soft); margin:0; }
+
+@media (max-width: 980px){ .what-ido-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px){ .what-ido-grid{ grid-template-columns: 1fr; } }
+
+/* ==========================================================================
    Experience — channel grid
    ========================================================================== */
 .exp-grid{
