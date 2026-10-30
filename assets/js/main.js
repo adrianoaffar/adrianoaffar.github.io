@@ -94,3 +94,28 @@
   }
 
 })();
+
+// hero-frame
+  const card = document.querySelector('.hero-frame');
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Posisi X kursor di dalam elemen
+    const y = e.clientY - rect.top;  // Posisi Y kursor di dalam elemen
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Batas maksimal kemiringan (derajat)
+    const rotateX = ((y - centerY) / centerY) * -12; 
+    const rotateY = ((x - centerX) / centerX) * 12;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    card.style.boxShadow = `${-rotateY * 1.5}px ${rotateX * 1.5}px 30px color-mix(in srgb, var(--accent) 20%, transparent)`;
+  });
+
+  // Riset posisi saat mouse meninggalkan foto
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    card.style.boxShadow = 'none';
+  });
