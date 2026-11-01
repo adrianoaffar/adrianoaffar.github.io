@@ -5,412 +5,409 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adriano Affar</title>
 <meta name="description" content="Portfolio of Adriano Ribetos Affar — Information Systems graduate, front-end developer, live video mixer and multimedia producer based in Jayapura, Papua, Indonesia.">
-
+<meta name="theme-color" content="#0A0B0D">
 <link rel="icon" href="assets/img/logo-adriano.png">
 
-<!-- Fonts -->
+<!-- Fonts & icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
-
 <link rel="stylesheet" href="assets/css/style.css">
 
-<!-- Set theme before paint to avoid flash -->
+<!-- Apply theme before first paint (no flash) -->
 <script>
-  (function(){
-    var saved = localStorage.getItem('theme');
-    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
+  (function () {
+    var root = document.documentElement, theme = null;
+    root.classList.add('js');
+    try { theme = localStorage.getItem('theme'); } catch (e) {}
+    if (!theme) theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
   })();
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ======= Header / Control strip ======= -->
-<header id="header">
-  <div class="header-inner">
-    <a href="#hero" class="brand">
-      <img src="assets/img/logo-adriano.png" alt="Adriano Affar logo">
-      Adriano Affar
+<!-- ============ Header ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="brand">
+      <img src="assets/img/logo-adriano.png" alt="" width="32" height="32">
+      <span>Adriano Affar</span>
     </a>
 
-    <nav class="nav-menu" id="navMenu">
-      <ul>
-        <li><a href="#hero" class="nav-link active"><span class="ch"></span> Home</a></li>
-        <li><a href="#about" class="nav-link"><span class="ch"></span> About</a></li>
-        <li><a href="#whatido" class="nav-link"><span class="ch"></span> What I Do</a></li>
-        <li><a href="#experience" class="nav-link"><span class="ch"></span> Experience</a></li>
-        <li><a href="#skills" class="nav-link"><span class="ch"></span> Skills</a></li>
-        <li><a href="#education" class="nav-link"><span class="ch"></span> Education</a></li>
+    <nav class="nav" id="nav" aria-label="Main">
+      <!-- Button X untuk menutup sidebar di layar mobile -->
+      <button class="icon-btn nav-close" id="navClose" type="button" aria-label="Close menu">
+        <i class="bx bx-x"></i>
+      </button>
+
+      <ul class="nav__list">
+        <li><a class="nav__link is-active" href="#home">Home</a></li>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#work">Work</a></li>
+        <li><a class="nav__link" href="#experience">Experience</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#education">Education</a></li>
       </ul>
     </nav>
 
-    <div class="header-actions">
-      <a href="https://wa.me/6282199481169?text=Hi%20Adriano%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
-         class="btn-wa" target="_blank" rel="noopener">
-        <i class="bx bxl-whatsapp"></i><span>WhatsApp Me</span>
+    <div class="header__actions">
+      <a class="btn-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+         href="https://wa.me/6282199481169?text=Hi%20Adriano%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect.">
+        <i class="bx bxl-whatsapp"></i><span>WhatsApp</span>
       </a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <i class="bx bx-moon" id="themeIcon"></i>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light mode">
+        <i class="bx bx-sun" id="themeIcon"></i>
       </button>
-      <button class="mobile-nav-toggle" id="navToggle" aria-label="Open menu">
+      <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
         <i class="bx bx-menu"></i>
       </button>
     </div>
   </div>
+  <div class="header__progress" aria-hidden="true"></div>
 </header>
 
-<!-- ======= Hero ======= -->
-<section id="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-eyebrow"><span class="tally-dot"></span> Jayapura, Papua, Indonesia</div>
-      <h1>Adriano<br>Ribetos <span>Affar</span></h1>
-      <div class="role-strip" id="roleStrip">Web Developer</div>
-      <p class="hero-lede">Information Systems graduate with 5+ years behind the camera and the switcher — mixing live broadcasts, building front-end interfaces, and directing video for campus, church and national-level events.</p>
-      <div class="hero-cta">
-        <a href="#footer" class="btn btn-primary"><i class="bx bx-envelope"></i> Get in Touch</a>
-        <a href="#whatido" class="btn btn-ghost"><i class="bx bx-play-circle"></i> View Work</a>
+<!-- ============ Hero ============ -->
+<section class="hero" id="home">
+  <div class="container hero__grid">
+
+    <p class="hero__status">
+      <span class="live-dot" aria-hidden="true"></span>Jayapura, Papua, Indonesia
+    </p>
+
+    <h1 class="hero__title">
+      <span>Adriano</span>
+      <span>Ribetos</span>
+      <span>Affar</span>
+    </h1>
+
+    <!-- Role "switcher bus": press a source to cut to a role -->
+    <div class="bus" role="group" aria-label="Roles">
+      <div class="bus__btns">
+        <button class="bus__btn" type="button" data-role="Web Developer" aria-label="Web Developer" aria-pressed="true">1</button>
+        <button class="bus__btn" type="button" data-role="Live Video Mixer (VMix / OBS)" aria-label="Live Video Mixer" aria-pressed="false">2</button>
+        <button class="bus__btn" type="button" data-role="Multimedia Producer" aria-label="Multimedia Producer" aria-pressed="false">3</button>
+        <button class="bus__btn" type="button" data-role="Graphic Designer" aria-label="Graphic Designer" aria-pressed="false">4</button>
+        <button class="bus__btn" type="button" data-role="Videographer" aria-label="Videographer" aria-pressed="false">5</button>
       </div>
+      <p class="bus__label" id="busLabel">Web Developer</p>
     </div>
 
-    <div class="hero-frame" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-      <img src="assets/img/foto-profil.png" alt="Adriano Affar">
-      <div class="scan"></div>
+    <figure class="monitor" id="monitor">
+      <div class="monitor__screen">
+        <img src="assets/img/foto-profil.png" alt="Portrait of Adriano Affar" fetchpriority="high">
+      </div>
+    </figure>
+
+    <p class="hero__lede">Information Systems graduate with 5+ years behind the camera and the switcher — mixing live broadcasts, building front-end interfaces, and directing video for campus, church and national-level events.</p>
+
+    <div class="hero__cta">
+      <a href="#contact" class="btn btn--primary"><i class="bx bx-envelope"></i>Get in touch</a>
+      <a href="#work" class="btn btn--ghost"><i class="bx bx-play-circle"></i>View work</a>
     </div>
   </div>
 </section>
 
+<!-- Tool ticker -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marqueeTrack">
+    <div class="marquee__group">
+      <span>vMix</span><span>OBS Studio</span><span>Premiere Pro</span><span>CapCut</span><span>Figma</span><span>Canva</span>
+      <span>HTML &amp; CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Bootstrap 5</span>
+      <span>IoT</span><span>YOLOv8</span><span>Arduino</span>
+    </div>
+  </div>
+</div>
+
 <main id="main">
 
-  <!-- ======= About ======= -->
-  <section id="about">
+  <!-- ============ About ============ -->
+  <section class="section" id="about">
     <div class="container">
-      <div class="section-head">
+      <header class="section-head">
         <h2>About</h2>
-        <div class="cue">PROFILE</div>
-      </div>
+      </header>
 
-      <div class="about-grid">
-        <div class="about-photo" data-reveal>
-          <img src="assets/img/foto-ano.jpg" alt="Portrait of Adriano Ribetos Affar">
-        </div>
+      <div class="about">
+        <figure class="about__photo" data-reveal>
+          <img src="assets/img/foto-ano.jpg" alt="Portrait of Adriano Ribetos Affar" loading="lazy" decoding="async">
+        </figure>
 
-        <div data-reveal>
-          <p class="about-lede">Information Systems graduate from Universitas Cenderawasih with a strong interest in web development, IoT and video production — and a track record of leading cross-functional teams through documentation, publication and live-broadcast projects.</p>
+        <div class="about__text" data-stagger>
+          <p class="about__lede">Information Systems graduate from Universitas Cenderawasih with a strong interest in web development, IoT and video production — and a track record of leading cross-functional teams through documentation, publication and live-broadcast projects.</p>
 
-          <div class="stat-row">
-            <div class="stat"><b>3.57</b><span>GPA / 4.00</span></div>
-            <div class="stat"><b>5+</b><span>Years in Multimedia</span></div>
-            <div class="stat"><b>6+</b><span>Led Projects</span></div>
+          <div class="stats">
+            <div class="stat"><b data-count="3.57" data-decimals="2">3.57</b><span>GPA / 4.00</span></div>
+            <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Years in multimedia</span></div>
+            <div class="stat"><b data-count="6" data-suffix="+">6+</b><span>Led projects</span></div>
           </div>
 
-          <ul class="fact-list">
-            <li><b>Status</b>Information Systems Graduate</li>
-            <li><b>Based in</b>Jayapura, Papua, Indonesia</li>
-            <li><b>Focus</b>Web Dev &middot; Multimedia &middot; Live Broadcast &middot; IoT &middot; ML &middot; Database</li>
-            <li><b>Availability</b>Open to Freelance &amp; Full-time</li>
-          </ul>
+          <dl class="spec">
+            <div><dt>Status</dt><dd>Information Systems Graduate</dd></div>
+            <div><dt>Based in</dt><dd>Jayapura, Papua, Indonesia</dd></div>
+            <div><dt>Focus</dt><dd>Web Dev &middot; Multimedia &middot; Live Broadcast &middot; IoT &middot; ML &middot; Database</dd></div>
+            <div><dt>Availability</dt><dd>Open to Freelance &amp; Full-time</dd></div>
+          </dl>
 
-          <p style="color:var(--ink-soft); font-size:.95rem;">With a passion that knows no bounds, I aspire to understand the complexity of code and create innovative solutions through programming — while staying rooted in the craft of visual storytelling that got me here.</p>
+          <p class="about__note">With a passion that knows no bounds, I aspire to understand the complexity of code and create innovative solutions through programming — while staying rooted in the craft of visual storytelling that got me here.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= What I do ======= -->
-<section id="whatido">
-  <div class="container">
-    <div class="section-head">
-      <h2>WHAT I DO</h2>
-        <div class="cue">I Do</div>
-    </div>       
-
-    <div class="what-ido-grid">
-      <div class="what-ido-card" data-reveal>
-        <div class="what-ido-thumb">
-          <a href="https://github.com/adrianoaffar/Monitoring-Pemberi-Pakan-Ikan-Lele-Otomatis-Berbasis-IoT" target="_blank" rel="noopener">
-            <img src="assets/img/dashboard-iot.jpeg" alt="IoT dashboard screenshot">
-          </a>
-        </div>
-        <div class="what-ido-body">
-          <h3>IoT Development</h3>
-          <p>Designing and implementing Internet of Things (IoT) solutions for feeding fishing equipment with pH sensor, TDS, Ultrasonic, servo mg996r and Telegram Bot for camera monitoring.</p>
-        </div>
-      </div>
-
-      <div class="what-ido-card" data-reveal>
-        <div class="what-ido-thumb">
-          <a href="https://kopino-jayapura.com/" target="_blank" rel="noopener">
-            <img src="assets/img/kopino.png" alt="Web development screenshot of Kopino website">
-          </a>
-        </div>
-        <div class="what-ido-body">
-          <h3>Web Development</h3>
-          <p>Building responsive, user-friendly websites and web applications with HTML, CSS, Bootstrap 5, and PHP Native — with a focus on clean design and intuitive user experience.</p>
-        </div>
-      </div>
-
-      <div class="what-ido-card" data-reveal>
-        <div class="what-ido-thumb">
-          <a href="https://efarming-jayapura.com/" target="_blank" rel="noopener">
-            <img src="assets/img/efarming.png" alt="Web development screenshot of eFarming website">
-          </a>
-        </div>
-        <div class="what-ido-body">
-          <h3>Web Development</h3>
-          <p>Building responsive, user-friendly websites and web applications with HTML, CSS, Bootstrap 5, and PHP Native — with a focus on calculation of income and expenses.</p>
-        </div>
-      </div>
-
-      <div class="what-ido-card" data-reveal>
-        <div class="what-ido-thumb">
-          <a href="https://github.com/adrianoaffar/Deteksi-Sampah-dan-Tempat-Sampah-Otomatis" target="_blank" rel="noopener">
-          <img src="assets/img/deteksi-sampah.png" alt="Deteksi Sampah Otomatis screenshot">
-          </a>
-        </div>
-        <div class="what-ido-body">
-          <h3>Automatic Waste Detection System</h3>
-          <p>Final project for Digital Image Processing — real-time waste-type detection controlling an automated bin use YoloV8 and Arduino R3.</p>
-        </div>
-      </div>
-
-      <div class="what-ido-card" data-reveal>
-        <div class="what-ido-thumb">
-          <a href="https://github.com/adrianoaffar/SI-Rating-SMA" target="_blank" rel="noopener">
-            <img src="assets/img/rating-sma.png" alt="Persami FMIPA 2023 aftermovie">
-          </a>
-        </div>
-        <div class="what-ido-body">
-          <h3>Web Development</h3>
-          <p>Web developer for a ranking and review platform for high schools, built for a Project Management final assignment.</p>
-        </div>
-
-    </div>
-  </div>
-</section>
-  <!-- ======= Experience ======= -->
-  <section id="experience">
+  <!-- ============ Work ============ -->
+  <section class="section" id="work">
     <div class="container">
-      <div class="section-head">
+      <header class="section-head">
+        <h2>What I do</h2>
+      </header>
+
+      <div class="projects" data-stagger>
+        <article class="project">
+          <a class="project__thumb" href="https://github.com/adrianoaffar/Monitoring-Pemberi-Pakan-Ikan-Lele-Otomatis-Berbasis-IoT" target="_blank" rel="noopener" aria-label="IoT fish feeder monitoring — view on GitHub">
+            <img src="assets/img/dashboard-iot.jpeg" alt="IoT dashboard screenshot" loading="lazy" decoding="async">
+            <span class="project__go" aria-hidden="true">&#8599;</span>
+          </a>
+          <div class="project__body">
+            <div class="project__meta"><span class="project__no">P&mdash;01</span><span class="chip">IoT</span></div>
+            <h3>Automatic Fish Feeder Monitoring</h3>
+            <p>Designing and implementing Internet of Things (IoT) solutions for feeding fishing equipment with pH sensor, TDS, Ultrasonic, servo MG996R and Telegram Bot for camera monitoring.</p>
+            <ul class="stack"><li>pH sensor</li><li>TDS</li><li>Ultrasonic</li><li>MG996R</li><li>Telegram Bot</li></ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="project__thumb" href="https://kopino-jayapura.com/" target="_blank" rel="noopener" aria-label="Kopino website — open site">
+            <img src="assets/img/kopino.png" alt="Screenshot of the Kopino website" loading="lazy" decoding="async">
+            <span class="project__go" aria-hidden="true">&#8599;</span>
+          </a>
+          <div class="project__body">
+            <div class="project__meta"><span class="project__no">P&mdash;02</span><span class="chip">Web</span></div>
+            <h3>Kopino Jayapura</h3>
+            <p>Building responsive, user-friendly websites and web applications with HTML, CSS, Bootstrap 5, and PHP Native — with a focus on clean design and intuitive user experience.</p>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>Bootstrap 5</li><li>PHP</li></ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="project__thumb" href="https://efarming-jayapura.com/" target="_blank" rel="noopener" aria-label="eFarming website — open site">
+            <img src="assets/img/efarming.png" alt="Screenshot of the eFarming website" loading="lazy" decoding="async">
+            <span class="project__go" aria-hidden="true">&#8599;</span>
+          </a>
+          <div class="project__body">
+            <div class="project__meta"><span class="project__no">P&mdash;03</span><span class="chip">Web</span></div>
+            <h3>eFarming Jayapura</h3>
+            <p>Building responsive, user-friendly websites and web applications with HTML, CSS, Bootstrap 5, and PHP Native — with a focus on calculation of income and expenses.</p>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>Bootstrap 5</li><li>PHP</li></ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="project__thumb" href="https://github.com/adrianoaffar/Deteksi-Sampah-dan-Tempat-Sampah-Otomatis" target="_blank" rel="noopener" aria-label="Automatic waste detection system — view on GitHub">
+            <img src="assets/img/deteksi-sampah.png" alt="Automatic waste detection screenshot" loading="lazy" decoding="async">
+            <span class="project__go" aria-hidden="true">&#8599;</span>
+          </a>
+          <div class="project__body">
+            <div class="project__meta"><span class="project__no">P&mdash;04</span><span class="chip">AI &amp; IoT</span></div>
+            <h3>Automatic Waste Detection System</h3>
+            <p>Final project for Digital Image Processing — real-time waste-type detection controlling an automated bin using YOLOv8 and Arduino R3.</p>
+            <ul class="stack"><li>YOLOv8</li><li>Arduino R3</li></ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="project__thumb" href="https://github.com/adrianoaffar/SI-Rating-SMA" target="_blank" rel="noopener" aria-label="SI Rating SMA — view on GitHub">
+            <img src="assets/img/rating-sma.png" alt="Screenshot of the SI Rating SMA platform" loading="lazy" decoding="async">
+            <span class="project__go" aria-hidden="true">&#8599;</span>
+          </a>
+          <div class="project__body">
+            <div class="project__meta"><span class="project__no">P&mdash;05</span><span class="chip">Web</span></div>
+            <h3>SI Rating SMA</h3>
+            <p>Web developer for a ranking and review platform for high schools, built for a Project Management final assignment.</p>
+            <ul class="stack"><li>Project Management</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Experience ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <header class="section-head">
         <h2>Experience</h2>
-        <div class="cue">SELECTED WORK</div>
+      </header>
+
+      <div class="filters" role="group" aria-label="Filter experience">
+        <button class="chip chip--btn" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip chip--btn" type="button" data-filter="video" aria-pressed="false">Film &amp; Video</button>
+        <button class="chip chip--btn" type="button" data-filter="org" aria-pressed="false">Org &amp; Service</button>
+        <button class="chip chip--btn" type="button" data-filter="award" aria-pressed="false">Award</button>
+        <span class="filters__count" id="expCount" aria-live="polite">8 / 8</span>
       </div>
 
-      <div class="exp-grid">
-
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://www.ceposonline.com/papua/2609250028/pembudidaya-ikan-kampung-yoka-terapkan-teknologi-pakan-otomatis-bertenaga-surya">
-          <div class="exp-thumb">
-            <span class="ch-label">Community service</span>
-            <img src="assets/img/pengabdian-masyarakat.png" alt="Pengabdian Masyarakat">
-          </div>
-          <div class="exp-body">
-            <h3>Community Service - IoT Technical Assistant & Android Application Developer</h3>
-            <p>Assisting with the assembly of electronic components (sensors, IoT & AI modules), performing basic coding and application connectivity testing, and helping with the installation of solar panels at floating net cage sites.</p>
-          </div>
-        </a>
-      
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://www.instagram.com/genbi_uncen">
-          <div class="exp-thumb">
-            <span class="ch-label">GenBI Universitas Cenderawasi</span>
-            <img src="assets/img/genbi.jpeg" alt="GenBI Universitas Cenderawasi">
-          </div>
-          <div class="exp-body">
-            <h3>Lead Publication and Social - GenBI Universitas Cenderawasi 2025</h3>
-            <p>Make a Content, Design and Social Media Plan for the GenBI Universitas Cenderawasi 2025.</p>
+      <div class="exp-list" id="expList" data-stagger>
+        <a class="exp" data-cat="org" target="_blank" rel="noopener" href="https://www.ceposonline.com/papua/2609250028/pembudidaya-ikan-kampung-yoka-terapkan-teknologi-pakan-otomatis-bertenaga-surya">
+          <figure class="exp__thumb">
+            <img src="assets/img/pengabdian-masyarakat.png" alt="Community service activity" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Community service</span>
+          </figure>
+          <div class="exp__body">
+            <h3>IoT Technical Assistant &amp; Android Application Developer</h3>
+            <p class="exp__role">Community Service</p>
+            <p>Assisting with the assembly of electronic components (sensors, IoT &amp; AI modules), performing basic coding and application connectivity testing, and helping with the installation of solar panels at floating net cage sites.</p>
           </div>
         </a>
 
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://www.instagram.com/pmm4ub">
-          <div class="exp-thumb">
-            <span class="ch-label">PMM 4</span>
-            <img src="assets/img/pmm-elektro-ub.jpg" alt="Pertukaran Mahasiswa Merdeka Batch 4">
+        <a class="exp" data-cat="org" target="_blank" rel="noopener" href="https://www.instagram.com/genbi_uncen">
+          <figure class="exp__thumb">
+            <img src="assets/img/genbi.jpeg" alt="GenBI Universitas Cenderawasih" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">GenBI Uncen</span>
+          </figure>
+          <div class="exp__body">
+            <h3>Lead Publication &amp; Social</h3>
+            <p class="exp__role">GenBI Universitas Cenderawasih &middot; 2025</p>
+            <p>Created the content, design and social media plan for GenBI Universitas Cenderawasih 2025.</p>
           </div>
-          <div class="exp-body">
-            <h3>Student Exchange - Pertukaran Mahasiswa Merdeka 4</h3>
+        </a>
+
+        <a class="exp" data-cat="org" target="_blank" rel="noopener" href="https://www.instagram.com/pmm4ub">
+          <figure class="exp__thumb">
+            <img src="assets/img/pmm-elektro-ub.jpg" alt="Pertukaran Mahasiswa Merdeka Batch 4" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">PMM 4</span>
+          </figure>
+          <div class="exp__body">
+            <h3>Pertukaran Mahasiswa Merdeka 4</h3>
+            <p class="exp__role">Student Exchange &middot; Universitas Brawijaya</p>
             <p>One semester of study and cultural exchange at Universitas Brawijaya, taking on multiple production and coordination roles.</p>
           </div>
         </a>
 
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/fZkkd9tAxqU?si=55cpKBVXVnTbFo5W">
-          <div class="exp-thumb">
-            <span class="ch-label">FILM</span>
-            <img src="assets/img/poster-film-pendek.png" alt="Short film Bertukar poster">
-            <div class="play"><i class="bx bx-play-circle"></i></div>
-          </div>
-          <div class="exp-body">
-            <h3>Short Film "Bertukar" - Lead Videographer</h3>
+        <a class="exp" data-cat="video" target="_blank" rel="noopener" href="https://youtu.be/fZkkd9tAxqU?si=55cpKDVXVnTbFo5W">
+          <figure class="exp__thumb">
+            <img src="assets/img/poster-film-pendek.png" alt="Poster of the short film Bertukar" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Film</span>
+            <i class="bx bx-play exp__play" aria-hidden="true"></i>
+          </figure>
+          <div class="exp__body">
+            <h3>Short Film &ldquo;Bertukar&rdquo;</h3>
+            <p class="exp__role">Lead Videographer</p>
             <p>Captured scene footage on set for PMM 4 Universitas Brawijaya, working directly under the producer and director.</p>
           </div>
         </a>
 
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/JtIN93I7k2w?si=5B7TPTOoi083ECY1">
-          <div class="exp-thumb">
-            <span class="ch-label">AFTERMOVIE</span>
-            <img src="assets/img/pkkmaba-2024.png" alt="PKKMaBa FMIPA 2024 aftermovie">
-            <div class="play"><i class="bx bx-play-circle"></i></div>
-          </div>
-          <div class="exp-body">
-            <h3>PKKMaBa FMIPA 2024 - Publication &amp; Documentation Coordinator</h3>
+        <a class="exp" data-cat="video" target="_blank" rel="noopener" href="https://youtu.be/JtIN93I7k2w?si=5B7TPTOoi083ECY1">
+          <figure class="exp__thumb">
+            <img src="assets/img/pkkmaba-2024.png" alt="PKKMaBa FMIPA 2024 aftermovie" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Aftermovie</span>
+            <i class="bx bx-play exp__play" aria-hidden="true"></i>
+          </figure>
+          <div class="exp__body">
+            <h3>PKKMaBa FMIPA 2024</h3>
+            <p class="exp__role">Publication &amp; Documentation Coordinator</p>
             <p>Led video capture and editing of the official aftermovie as the faculty's primary event record.</p>
           </div>
         </a>
 
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/GMFZggt_iEM?si=ZqdQ43afsSFn9kM7">
-          <div class="exp-thumb">
-            <span class="ch-label">AFTERMOVIE</span>
-            <img src="assets/img/pkkmaba-2023.png" alt="PKKMaBa FMIPA 2023 aftermovie">
-            <div class="play"><i class="bx bx-play-circle"></i></div>
-          </div>
-          <div class="exp-body">
-            <h3>PKKMaBa FMIPA 2023 - Director, Videographer &amp; Editor</h3>
+        <a class="exp" data-cat="video" target="_blank" rel="noopener" href="https://youtu.be/GMFZggt_iEM?si=ZqdQ43afsSFn9kM7">
+          <figure class="exp__thumb">
+            <img src="assets/img/pkkmaba-2023.png" alt="PKKMaBa FMIPA 2023 aftermovie" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Aftermovie</span>
+            <i class="bx bx-play exp__play" aria-hidden="true"></i>
+          </figure>
+          <div class="exp__body">
+            <h3>PKKMaBa FMIPA 2023</h3>
+            <p class="exp__role">Director, Videographer &amp; Editor</p>
             <p>Led capture and post-production of the faculty's official freshman orientation aftermovie.</p>
           </div>
-        </a>        
+        </a>
 
-        <a class="exp-card" data-reveal target="_blank" rel="noopener" href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
-          <div class="exp-thumb">
-            <span class="ch-label">AFTERMOVIE</span>
-            <img src="assets/img/persami-2023.png" alt="Persami FMIPA 2023 aftermovie">
-            <div class="play"><i class="bx bx-play-circle"></i></div>
-          </div>
-          <div class="exp-body">
-            <h3>Persami FMIPA 2023 - Director &amp; Editor</h3>
+        <a class="exp" data-cat="video" target="_blank" rel="noopener" href="https://youtu.be/Yjj789lr-vM?si=3u7VdN6pKuj1la9n">
+          <figure class="exp__thumb">
+            <img src="assets/img/persami-2023.png" alt="Persami FMIPA 2023 aftermovie" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Aftermovie</span>
+            <i class="bx bx-play exp__play" aria-hidden="true"></i>
+          </figure>
+          <div class="exp__body">
+            <h3>Persami FMIPA 2023</h3>
+            <p class="exp__role">Director &amp; Editor</p>
             <p>Directed, shot and edited the official aftermovie documenting the faculty camp event.</p>
           </div>
         </a>
 
-        <div class="exp-card" data-reveal>
-          <div class="exp-thumb">
-            <span class="ch-label">DEBATE</span>
-            <img src="assets/img/debat-bahasa-inggris.jpg" alt="English debate competition, 2nd place">
-          </div>
-          <div class="exp-body">
-            <h3>2nd Place - Papua Provincial English Debate</h3>
+        <div class="exp" data-cat="award">
+          <figure class="exp__thumb">
+            <img src="assets/img/debat-bahasa-inggris.jpg" alt="English debate competition, 2nd place" loading="lazy" decoding="async">
+            <span class="chip chip--on-media">Debate</span>
+          </figure>
+          <div class="exp__body">
+            <h3>2nd Place &mdash; Papua Provincial English Debate</h3>
+            <p class="exp__role">Second Speaker &middot; 2021</p>
             <p>Competed as second speaker in the provincial SMK-level English debate competition, 2021.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ======= Skills ======= -->
-  <section id="skills">
+  <!-- ============ Skills ============ -->
+  <section class="section" id="skills">
     <div class="container">
-      <div class="section-head">
+      <header class="section-head">
         <h2>Skills</h2>
-        <div class="cue">LEVEL CHECK</div>
-      </div>
+      </header>
 
-      <div class="skills-wrap">
-        <div class="skill-group" data-reveal>
-          <h4>Web Development</h4>
-
-          <div class="meter">
-            <div class="meter-top"><span>HTML &amp; CSS</span><span>90%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="90"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>JavaScript</span><span>50%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="50"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>PHP</span><span>60%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="60"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>Laravel</span><span>40%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="40"></div></div>
-          </div>
+      <div class="skills">
+        <div class="skills__group" data-stagger>
+          <div class="fader" style="--target:90%"><div class="fader__top"><span>HTML &amp; CSS</span><span>90%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:50%"><div class="fader__top"><span>JavaScript</span><span>50%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:60%"><div class="fader__top"><span>PHP</span><span>60%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:40%"><div class="fader__top"><span>Laravel</span><span>40%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
         </div>
 
-        <div class="skill-group" data-reveal>
-          <h4>Production &amp; Design</h4>
-
-          <div class="meter">
-            <div class="meter-top"><span>VMix / OBS Studio</span><span>95%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="95"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>Adobe Premiere / CapCut</span><span>90%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="90"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>Figma / Canva</span><span>85%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="85"></div></div>
-          </div>
-          <div class="meter">
-            <div class="meter-top"><span>Whimsical</span><span>70%</span></div>
-            <div class="meter-track"><div class="meter-fill" data-level="70"></div></div>
-          </div>
+        <div class="skills__group" data-stagger>
+          <div class="fader" style="--target:95%"><div class="fader__top"><span>vMix / OBS Studio</span><span>95%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:90%"><div class="fader__top"><span>Adobe Premiere / CapCut</span><span>90%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:85%"><div class="fader__top"><span>Figma / Canva</span><span>85%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
+          <div class="fader" style="--target:70%"><div class="fader__top"><span>Whimsical</span><span>70%</span></div><div class="fader__track"><div class="fader__fill"></div><div class="fader__knob"></div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= Education ======= -->
-  <section id="education">
+  <!-- ============ Education ============ -->
+  <section class="section" id="education">
     <div class="container">
-      <div class="section-head">
+      <header class="section-head">
         <h2>Education</h2>
-        <div class="cue">RECORD</div>
-      </div>
+      </header>
 
-      <div class="edu-list">
-        <div class="edu-item" data-reveal>
-          <div class="edu-year">2022 &ndash; 2026</div>
-          <div>
-            <h3>Bachelor of Information Systems</h3>
-            <p class="school">Universitas Cenderawasih, Jayapura, Indonesia</p>
-            <ul>
-              <li>GPA: 3.57 / 4.00</li>
-              <li>Relevant coursework: Internet Programming, Design WEB UI, Databases, Object-Oriented Programming, Multimedia and Internet of Things</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="edu-item" data-reveal>
-          <div class="edu-year">2019 &ndash; 2022</div>
-          <div>
-            <h3>SMK Negeri 3 Teknologi dan Rekayasa</h3>
-            <p class="school">Vocational High School</p>
-            <ul>
-              <li>Completed an internship at PT. Telkom Abepura</li>
-              <li>Won 2nd Place in the Papua Provincial English Debate Competition</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <ol class="timeline" data-stagger>
+        <li>
+          <span class="timeline__year">2022 &ndash; 2026</span>
+          <h3>Bachelor of Information Systems</h3>
+          <p class="timeline__school">Universitas Cenderawasih, Jayapura, Indonesia</p>
+          <ul>
+            <li>GPA: 3.57 / 4.00</li>
+            <li>Relevant coursework: Internet Programming, Design WEB UI, Databases, Object-Oriented Programming, Multimedia and Internet of Things</li>
+          </ul>
+        </li>
+        <li>
+          <span class="timeline__year">2019 &ndash; 2022</span>
+          <h3>SMK Negeri 3 Teknologi dan Rekayasa</h3>
+          <p class="timeline__school">Vocational High School</p>
+          <ul>
+            <li>Completed an internship at PT. Telkom Abepura</li>
+            <li>Won 2nd Place in the Papua Provincial English Debate Competition</li>
+          </ul>
+        </li>
+      </ol>
     </div>
   </section>
-
-  <!-- ======= Contact ======= -->
-  <!-- <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <div class="cue">GET IN TOUCH</div>
-      </div>
-
-      <div class="contact-grid">
-        <a class="contact-card" data-reveal href="mailto:adriano.affar28@gmail.com">
-          <i class="bx bx-envelope"></i>
-          <h4>Email</h4>
-          <p>adriano.affar28@gmail.com</p>
-        </a>
-        <a class="contact-card" data-reveal href="https://wa.me/6282199481169" target="_blank" rel="noopener">
-          <i class="bx bxl-whatsapp"></i>
-          <h4>WhatsApp / Call</h4>
-          <p>+62 821 9948 1169</p>
-        </a>
-      </div>
-    </div>
-  </section> -->
 
 </main>
-
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -421,14 +418,12 @@
       <a href="https://www.linkedin.com/in/adriano-affar-8471822a7/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
       <a href="https://github.com/adrianoaffar" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
     </div>
-    <div class="foot-note">&copy; 2023 Adriano Ribetos Affar. All rights reserved.</div>
+    <div class="foot-note">&copy; <span>2023</span> Adriano Ribetos Affar. All rights reserved.</div>
   </div>
 </footer>
 
-<a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+<a href="#home" class="to-top" id="toTop" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
 
 <script src="assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
 </body>
 </html>
